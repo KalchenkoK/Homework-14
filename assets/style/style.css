@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+}
+.sky {
+  background: lightblue;
+  width: 100%;
+  height: 100vh;
+}
+.sky__cloud-small,
+.sky__cloud-big,
+.sky__cloud-medium {
+  background: url("../img/cloud.svg") center/cover no-repeat;
+  position: absolute;
+
+  animation-name: animateCloud;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  left: 0;
+  animation-iteration-count: infinite;
+}
+.sky__cloud-small {
+  width: 134px;
+  height: 70px;
+  top: 35%;
+  transform: translate(0, 0);
+}
+.sky__cloud-medium {
+  width: 190px;
+  height: 100px;
+  top: 60%;
+  animation-duration: 15s;
+  transform: translate(-100%, 0);
+}
+.sky__cloud-big {
+  width: 230px;
+  height: 120px;
+  top: 10%;
+  animation-duration: 15s;
+  transform: translate(-60%, 0);
+}
+@keyframes animateCloud {
+  0% {
+  }
+  100% {
+    left: 100%;
+    transform: translate(100%, 0);
+  }
+}
+.house_animation,
+.money_animation,
+.education_animation {
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 10%;
+  animation-duration: 5s;
+  animation-name: animateHouse;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 200px;
+  height: 200px;
+}
+.money_animation {
+  left: calc(80% - 100px);
+  top: 40%;
+}
+.education_animation {
+  left: calc(50% - 100px);
+  top: 70%;
+}
+@keyframes animateHouse {
+  0% {
+    transform: translate(0, 0px);
+  }
+  25% {
+    transform: translate(0, 10px);
+  }
+  50% {
+    transform: translate(0, 0px);
+  }
+  75% {
+    transform: translate(0, -10px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+.house,
+.money,
+.education {
+  background: white;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 100%;
+}
+.money,.education,.money_animation,.education_animation{
+    width: 150px;
+    height: 150px;
+}
+.money > img, .education>img {
+    position: absolute;
+    width: 100px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+  }
+.house > img {
+  position: absolute;
+  width: 150px;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+}
+.wing_left,
+.wing_right {
+  position: absolute;
+  left: -50%;
+  width: 50%;
+  top: calc(50% - 25px);
+  animation-duration: 5s;
+  animation-name: animateWings;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wing_right {
+  animation-name: animateWings2;
+  left: 100%;
+}
+@keyframes animateWings {
+  0% {
+    transform-origin: 0;
+  }
+  25% {
+    transform-origin: 100% 50%;
+    transform: rotate(10deg);
+  }
+  50% {
+  }
+  75% {
+    transform-origin: 100% 50%;
+    transform: rotate(-10deg);
+  }
+  100% {
+  }
+}
+@keyframes animateWings2 {
+  0% {
+    transform-origin: 0;
+  }
+  25% {
+    transform-origin: 0 50%;
+    transform: rotate(-10deg);
+  }
+  50% {
+  }
+  75% {
+    transform-origin: 0 50%;
+    transform: rotate(10deg);
+  }
+  100% {
+  }
+}
